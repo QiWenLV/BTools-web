@@ -1,15 +1,14 @@
-import { Table, Tag, Space, Button, Row, Col, Slider, Card, Avatar, Radio, Typography } from 'antd';
+import { Table, Tag, Space, Button, Row, Col, Slider, Card, Avatar, Radio, Typography, Collapse  } from 'antd';
 import { HeartOutlined, CheckCircleOutlined, DeleteOutlined } from '@ant-design/icons';
 import {get, post} from '../common/req'
 import {useState, useEffect} from "react";
-import moment from 'moment';
 
 function BlackList() {
-    const { Paragraph, Text } = Typography;
+    const {Text } = Typography;
 
     const { Meta } = Card;
+    const { Panel } = Collapse;
     const [data, setData] = useState([]);
-    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
     const [colCountKey, setColCountKey] = useState(2);
     const [rows, setRows] = useState([]);
@@ -44,7 +43,7 @@ function BlackList() {
                         ]}>
                             <Meta
                                 avatar={<Avatar src={data[i]['face']}/>}
-                                title={data[i]['uname']}
+                                title={<a href={"https://space.bilibili.com/" + data[i]['mid']}>{data[i]['uname']}</a>}
                                 description={<Text ellipsis={true}
                                                    style={{fontSize: "12px", color: "gray"}}>{data[i]['desc']}</Text>}
                             />
@@ -130,6 +129,17 @@ function BlackList() {
                 </Col>
             </Row>
             <Row gutter={[8, 8]}>
+                {/*<Collapse defaultActiveKey={['1']} onChange={callback}>*/}
+                {/*    <Panel header="This is panel header 1" key="1">*/}
+                {/*        <p>{text}</p>*/}
+                {/*    </Panel>*/}
+                {/*    <Panel header="This is panel header 2" key="2">*/}
+                {/*        <p>{text}</p>*/}
+                {/*    </Panel>*/}
+                {/*    <Panel header="This is panel header 3" key="3">*/}
+                {/*        <p>{text}</p>*/}
+                {/*    </Panel>*/}
+                {/*</Collapse>*/}
                 {rows}
             </Row>
         </div>

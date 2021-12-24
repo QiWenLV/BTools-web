@@ -3,6 +3,7 @@ import './App.css';
 import Home from './home/Home';
 import BlackList from './home/BlackList';
 import LeftMenu from './home/LeftMenu';
+import GlobalSetting from './home/GlobalSetting';
 import { Layout } from 'antd';
 import { Switch, Route, Link} from 'react-router-dom'
 import {CacheSwitch, CacheRoute} from 'react-cache-router';
@@ -23,6 +24,7 @@ function App() {
                         <CacheSwitch>
                             <CacheRoute path="/home" component={Home}/>
                             <CacheRoute path="/blackList" component={BlackList}/>
+                            <CacheRoute path="/globalSetting" component={GlobalSetting}/>
                         </CacheSwitch>
                     </Content>
                 </Layout>

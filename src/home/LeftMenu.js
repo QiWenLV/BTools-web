@@ -27,9 +27,9 @@ class LeftMenu extends React.Component {
                         <Menu.Item key="1"><Link to="/home">动态列表</Link></Menu.Item>
                         <Menu.Item key="2"><Link to="/blackList">黑名单</Link></Menu.Item>
                     </Menu.ItemGroup>
-                    <Menu.ItemGroup key="g2" title="Item 2">
-                        <Menu.Item key="3">Option 3</Menu.Item>
-                        <Menu.Item key="4">Option 4</Menu.Item>
+                    <Menu.ItemGroup key="g2" title="设置">
+                        <Menu.Item key="3"><Link to="/globalSetting">全局设置</Link></Menu.Item>
+                        <Menu.Item key="4"><Link to="/dynamicSetting">动态设置</Link></Menu.Item>
                     </Menu.ItemGroup>
                 </SubMenu>
                 <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">

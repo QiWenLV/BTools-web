@@ -1,9 +1,8 @@
-import { Table, Tag, Space, Button, Row, Col, DatePicker, Form, Switch, Layout } from 'antd';
+import {Button, Col, DatePicker, Form, Row, Space, Switch, Table} from 'antd';
 import {get, post} from '../common/req'
-import {useState, useEffect} from "react";
+import {useEffect, useState} from "react";
 import moment from 'moment';
 
-const { Header, Footer, Sider, Content } = Layout;
 function Home() {
     const [data, setData] = useState([]);
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);

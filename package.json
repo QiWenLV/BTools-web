@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
+  "homepage": ".",
   "dependencies": {
     "@ant-design/icons": "latest",
-    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "ant-design": "^1.0.0",
-    "antd": "^4.16.13",
+    "antd": "^4.17.3",
     "axios": "0.24.0",
-    "electron": "^15.3.1",
+    "electron-packager": "^15.4.0",
     "element-react": "^1.4.34",
     "element-theme-default": "^1.4.13",
+    "extract-zip": "^2.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-cache-route": "^1.12.1",
@@ -21,12 +23,28 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "build": {
+    "appId": "com.zqw.bili",
+    "mac": {
+      "target": ["dmg","zip"]
+    },
+    "win": {
+      "target": ["nsis","zip"]
+    },
+    "extends": null,
+    "files": [
+      "build/**/*",
+      "main.js"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-start": "electron ."
+    "electron-start": "electron .",
+    "pack": "yarn run build && electron-builder --dir",
+    "dist": " "
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +65,26 @@
     ]
   },
   "devDependencies": {
-    "react-cache-router": "^1.1.0"
+    "react-cache-router": "^1.1.0",
+    "electron": "^15.3.3",
+    "electron-builder": "^22.14.5",
+
+    "@ant-design/icons": "latest",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "ant-design": "^1.0.0",
+    "antd": "^4.17.3",
+    "axios": "0.24.0",
+    "electron-packager": "^15.4.0",
+    "element-react": "^1.4.34",
+    "element-theme-default": "^1.4.13",
+    "extract-zip": "^2.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-cache-route": "^1.12.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
   }
 }

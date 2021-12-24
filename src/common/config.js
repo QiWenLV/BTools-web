@@ -3,4 +3,4 @@ const proBaseURL = "https://product.org";
 
 export const BASE_URL = devBaseURL;
 
-export const TIMEOUT = 50000;
+export const TIMEOUT = 500000;
